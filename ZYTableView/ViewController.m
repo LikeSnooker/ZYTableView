@@ -33,6 +33,10 @@
 }
 
 #pragma mark UITableViewDelegate
+- (void)tableView:(ZYTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"section = %d,row = %d",indexPath.section,indexPath.row);
+}
 - (CGFloat)tableView:(ZYTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 80;

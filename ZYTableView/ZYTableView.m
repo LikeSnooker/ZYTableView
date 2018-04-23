@@ -233,6 +233,13 @@ static NSString * CONTENT_CELL_IDENTIFIER  = @"CONTENT_CELL";
     }
 }
 #pragma mark UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(_delegate && [_delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
+    {
+        [_delegate tableView:self didSelectRowAtIndexPath:indexPath];
+    }
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(tableView == _contextTable)

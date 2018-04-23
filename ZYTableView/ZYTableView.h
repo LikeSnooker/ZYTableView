@@ -18,8 +18,15 @@
 - (NSInteger)          tableView:(ZYTableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (NSInteger)          numberOfSectionsInTableView:(ZYTableView *)tableView;
 - (UITableViewCell *)  tableView:(ZYTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+/*
+ * 返回不同section 的 title,此title 是右侧列表的 section title,同时将作为左侧列表cell 的文本内容
+ */
 - (nullable NSString *)tableView:(ZYTableView *)tableView titleForHeaderInSection
                                    :(NSInteger)section;
+
+/*
+ * 返回section 的 image ,这个image 将显示在左侧列表的对应cell中
+ */
 - (nullable UIImage  *)tableView:(ZYTableView *)tableView imageForHeaderInSection
                                    :(NSInteger)section;
 
@@ -28,6 +35,7 @@
 @required
 - (CGFloat)tableView:(ZYTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 @optional
+- (void)tableView:   (ZYTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(ZYTableView *)tableView heightForHeaderInSection:(NSInteger)section;
 - (CGFloat)tableView:(ZYTableView *)tableView heightForFooterInSection:(NSInteger)section;
 @end
